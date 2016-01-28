@@ -1,0 +1,6 @@
+<h1>{{heroListCtrl.title}}</h1>
+<div class="list-group">
+    <a href="#" ng-click="heroListCtrl.select(hero)" class="list-group-item" ng-repeat="hero in heroListCtrl.heroes">
+        {{hero.name}} | {{hero.identity}}
+    </a>
+</div>
