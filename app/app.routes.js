@@ -16,6 +16,11 @@ angular.module('app')
             controllerAs: "heroListCtrl"
         })
 
+        .when('/users',{
+            templateUrl: '/users/users.html',
+            controller: 'UserController'
+        })
+
         .otherwise({
             redirectTo:'/heroes'
         });

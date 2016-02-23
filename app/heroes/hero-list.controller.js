@@ -5,7 +5,7 @@
         .module('app')
         .controller('HeroListController', HeroListController);
 
-    HeroListController.$inject = [$timeout];
+    HeroListController.$inject = ['$timeout'];
 
     /* @ngInject */
     function HeroListController($timeout) {
