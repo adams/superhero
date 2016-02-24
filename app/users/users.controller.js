@@ -41,7 +41,7 @@
         userCtrl.revertEditing = function(index){
             userCtrl.editedUser = {};
             userCtrl.users[index] = userCtrl.originalUser;
-        }
+        };
 
         userCtrl.save = function(form){
             if(form.$invalid){
@@ -82,6 +82,36 @@
                 $window.alert("there was a problem deleting");
                 $log.error(response.status);
             });
+        };
+
+        userCtrl.adding = function(){
+            userCtrl.newUser = {};
+        };
+
+        userCtrl.revertAdding = function(index){
+            userCtrl.newUser = null;
+        };
+
+        userCtrl.add = function(form){
+            if(form.$invalid){
+                $window.alert("can't save: form not valid");
+                return false;
+            }
+
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/users/',
+                data: userCtrl.newUser
+            })
+                .then(function(response){
+                    userCtrl.users.push(userCtrl.newUser);
+                    userCtrl.newUser = null;
+
+                }).catch(function(response){
+                $window.alert("problem saving");
+                $log.error(response.status);
+            });
+
         };
 
 

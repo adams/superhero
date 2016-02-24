@@ -1,10 +1,39 @@
 <div class="container">
     <h2>Users</h2>
+    <div class="row" ng-show="!userCtrl.newUser">
+        <div class="col-xs-offset-10 col-xs-2">
+        <button type="button" ng-click="userCtrl.adding()" class="btn btn-link btn-xs">
+            <span class="glyphicon glyphicon-plus">add</span>
+        </button>
+        </div>
+    </div>
+    <div class="row" ng-show="userCtrl.newUser">
+        <div class="col-xs-4 col-xs-offset-0 well">
+
+            <form novalidate name="UserAddForm" ng-submit="userCtrl.add(UserAddForm)">
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" required class="form-control" name="username" ng-model="userCtrl.newUser.name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input type="text" class="form-control" name="useremail" ng-model="userCtrl.newUser.email" />
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-8 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a href="" ng-click="userCtrl.revertAdding($index)"> cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <p ng-if="userCtrl.users.count==0">No users were found.</p>
     <ul class="list-group">
         <li ng-repeat="user in userCtrl.users" class="list-group-item" href="#">
 
-             <img class="img-responsive img-circle" ng-src="{{user.avatar}}" alt="user.name">
+             <img class="img-responsive img-circle" ng-src="{{user.avatar}}" alt="{{user.name}}">
             <br>
             <div ng-show="user != userCtrl.editedUser " class="row">
                 <div class="col-xs-4">
