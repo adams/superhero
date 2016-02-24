@@ -43,9 +43,12 @@
             userCtrl.users[index] = userCtrl.originalUser;
         }
 
-        userCtrl.save = function(event){
-            //if(userCtrl.UserForm.invalid){alert("can't save: form not valid");}
-            event.preventDefault();
+        userCtrl.save = function(form){
+            if(form.$invalid){
+                $window.alert("can't save: form not valid");
+                return false;
+            }
+
             $http({
                 method: 'PUT',
                 url: 'http://localhost:3000/users/' +userCtrl.editedUser.id ,
@@ -55,7 +58,7 @@
                     userCtrl.editedUser = {};
 
                 }).catch(function(response){
-                alert("problem saving");
+                $window.alert("problem saving");
                 $log.error(response.status);
             });
 
@@ -76,7 +79,7 @@
                     userCtrl.users.splice(index,1);
                     $log.info("successfully deleted");
                 }).catch(function(response){
-                alert("there was a problem deleting");
+                $window.alert("there was a problem deleting");
                 $log.error(response.status);
             });
         };
