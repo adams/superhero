@@ -5,10 +5,10 @@
         .module('app')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['$http', '$window', '$log'];
+    UserController.$inject = ['$http', '$window', '$log','UserService'];
 
     /* @ngInject */
-    function UserController($http, $window, $log) {
+    function UserController($http, $window, $log, UserService) {
         /* jshint validthis: true */
         var userCtrl = this;
         userCtrl.title = 'UserController';
@@ -20,15 +20,11 @@
 
         function activate() {
 
-            $http({
-                method: 'get',
-                url: 'http://localhost:3000/users'
-            }).then(function(response){
-                    if(!response.data){return;}
-                    userCtrl.users = response.data;
+            UserService.list()
+            .then(function(response){
+                userCtrl.users = response.data;
             }).catch(function(response){
-                    if(!response.data){return;}
-                    $log.error(response.status);
+                $log.error(response.status);
             });
         }
 
@@ -49,15 +45,10 @@
                 return false;
             }
 
-            $http({
-                method: 'PUT',
-                url: 'http://localhost:3000/users/' +userCtrl.editedUser.id ,
-                data: userCtrl.editedUser
-            })
-                .then(function(response){
-                    userCtrl.editedUser = {};
-
-                }).catch(function(response){
+            UserService.update(userCtrl.editedUser)
+            .then(function(response){
+                userCtrl.editedUser = {};
+            }).catch(function(response){
                 $window.alert("problem saving");
                 $log.error(response.status);
             });
@@ -71,14 +62,11 @@
                 return false;
             }
 
-            $http({
-                method: 'DELETE',
-                url: 'http://localhost:3000/users/' + userId
-            })
-                .then(function(response){
-                    userCtrl.users.splice(index,1);
-                    $log.info("successfully deleted");
-                }).catch(function(response){
+            UserService.remove(userId)
+            .then(function(response){
+                userCtrl.users.splice(index,1);
+                $log.info("successfully deleted");
+            }).catch(function(response){
                 $window.alert("there was a problem deleting");
                 $log.error(response.status);
             });
@@ -98,16 +86,11 @@
                 return false;
             }
 
-            $http({
-                method: 'POST',
-                url: 'http://localhost:3000/users/',
-                data: userCtrl.newUser
-            })
-                .then(function(response){
-                    userCtrl.users.push(userCtrl.newUser);
-                    userCtrl.newUser = null;
-
-                }).catch(function(response){
+            UserService.add(userCtrl.newUser)
+            .then(function(response){
+                userCtrl.users.unshift(userCtrl.newUser);
+                userCtrl.newUser = null;
+            }).catch(function(response){
                 $window.alert("problem saving");
                 $log.error(response.status);
             });
