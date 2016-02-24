@@ -18,7 +18,8 @@ angular.module('app')
 
         .when('/users',{
             templateUrl: '/users/users.html',
-            controller: 'UserController'
+            controller: 'UserController',
+            controllerAs: "userCtrl"
         })
 
         .otherwise({

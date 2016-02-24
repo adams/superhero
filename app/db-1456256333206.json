@@ -1,22 +1,10 @@
 {
   "users": [
     {
-      "id": 4,
-      "name": "Nikita Fayes",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/gonzalorobaina/128.jpg",
-      "email": "Maudie_Cummerata81@hotmail.com"
-    },
-    {
       "id": 7,
       "name": "Zachery Shields",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nicolasfolliot/128.jpg",
       "email": "Kyra_Feil@gmail.com"
-    },
-    {
-      "id": 8,
-      "name": "Flo O'Hara",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/travis_arnold/128.jpg",
-      "email": "Asha59@hotmail.com"
     },
     {
       "id": 9,
@@ -56,7 +44,7 @@
     },
     {
       "id": 15,
-      "name": "Zoey Ward",
+      "name": "Zoey Wards",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mr_subtle/128.jpg",
       "email": "Geoffrey.Schumm@gmail.com"
     },
@@ -140,9 +128,9 @@
     },
     {
       "id": 30,
-      "name": "Curt Pfannerstill",
+      "name": "Curt Pfannerstills",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/timpetricola/128.jpg",
-      "email": "Humberto24@gmail.com"
+      "email": "Humberto25@gmail.com"
     },
     {
       "id": 31,
@@ -281,12 +269,6 @@
       "name": "Brook Hegmann",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dss49/128.jpg",
       "email": "Flo63@gmail.com"
-    },
-    {
-      "id": 56,
-      "name": "Era Hermiston",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/teeragit/128.jpg",
-      "email": "Blake_Wolf@gmail.com"
     },
     {
       "id": 57,

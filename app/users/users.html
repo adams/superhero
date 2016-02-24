@@ -1,39 +1,39 @@
 <div class="container">
     <h2>Users</h2>
-    <p ng-if="users.count==0">No users were found.</p>
+    <p ng-if="userCtrl.users.count==0">No users were found.</p>
     <ul class="list-group">
-        <li ng-repeat="user in users" class="list-group-item" href="#">
+        <li ng-repeat="user in userCtrl.users" class="list-group-item" href="#">
 
              <img class="img-responsive img-circle" ng-src="{{user.avatar}}" alt="user.name">
             <br>
-            <div ng-show="user != editedUser " class="row">
+            <div ng-show="user != userCtrl.editedUser " class="row">
                 <div class="col-xs-4">
                 {{user.name}}
                 </div>
 
             </div>
-            <div ng-show="user != editedUser " class="row">
+            <div ng-show="user != userCtrl.editedUser " class="row">
                 <div class="col-xs-4">
                     <a href="mailto:{{user.email}}" >{{user.email}}</a>
                 </div>
 
             </div>
-            <div ng-show="user != editedUser " class="row">
+            <div ng-show="user != userCtrl.editedUser " class="row">
                 <div class="col-xs-2">
-                    <a href="" ng-click="editing(user)">edit</a>
+                    <a href="" ng-click="userCtrl.editing(user)">edit</a>
                 </div>
                 <div class="col-xs-2">
-                    <button type="button" ng-click="remove($index,user.id)" class="btn btn-link btn-xs">
+                    <button type="button" ng-click="userCtrl.remove($index,user.id)" class="btn btn-link btn-xs">
                         <span class="glyphicon glyphicon-trash"> </span>
                     </button>
                 </div>
 
             </div>
 
-            <div class="row" ng-show="user == editedUser">
+            <div class="row" ng-show="user == userCtrl.editedUser">
                 <div class="col-xs-4 col-xs-offset-1 well">
 
-                    <form novalidate name="UserForm" ng-submit="save($event)">
+                    <form novalidate name="UserForm" ng-submit="userCtrl.save($event)">
                         <div class="form-group">
                             <label for="username">Name</label>
                             <input type="text" class="form-control" name="username" ng-model="user.name" />
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-8 col-sm-10">
                                 <button type="submit" class="btn btn-primary">Save</button>
-                                <a href="" ng-click="revertEditing($index)"> cancel</a>
+                                <a href="" ng-click="userCtrl.revertEditing($index)"> cancel</a>
                             </div>
                         </div>
                     </form>
