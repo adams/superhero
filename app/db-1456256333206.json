@@ -1,46 +1,10 @@
 {
   "users": [
     {
-      "id": 0,
-      "name": "Kaylie Medhurst Mr..",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/matt3224/128.jpg",
-      "email": "Ceasar.Metz78@gmail.com"
-    },
-    {
-      "id": 1,
-      "name": "Kay Lesche",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/newbrushes/128.jpg",
-      "email": "Matteo_Rath63@yahoo.com"
-    },
-    {
-      "id": 2,
-      "name": "Americo Stehrs",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/angelcolberg/128.jpg",
-      "email": "Ofelia46@gmail.com"
-    },
-    {
-      "id": 3,
-      "name": "Alexandrine Kunde",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/manigm/128.jpg",
-      "email": "Jayda.Haag@yahoo.com"
-    },
-    {
       "id": 4,
-      "name": "Nikita Faye",
+      "name": "Nikita Fayes",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/gonzalorobaina/128.jpg",
       "email": "Maudie_Cummerata81@hotmail.com"
-    },
-    {
-      "id": 5,
-      "name": "Eleanore Spencers",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/chrismj83/128.jpg",
-      "email": "Russ_Cruickshank@yahoo.com"
-    },
-    {
-      "id": 6,
-      "name": "Jerome Hermann",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/aaronalfred/128.jpg",
-      "email": "Brook_Rolfson83@gmail.com"
     },
     {
       "id": 7,
@@ -107,12 +71,6 @@
       "name": "Daryl Vandervort",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vocino/128.jpg",
       "email": "Marilyne87@hotmail.com"
-    },
-    {
-      "id": 18,
-      "name": "Seth Bosco",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/samscouto/128.jpg",
-      "email": "Noemy.Brekke@gmail.com"
     },
     {
       "id": 19,
@@ -271,12 +229,6 @@
       "email": "Tate_Kutch@yahoo.com"
     },
     {
-      "id": 45,
-      "name": "Christy Kirlin",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nutzumi/128.jpg",
-      "email": "Octavia.Yost@yahoo.com"
-    },
-    {
       "id": 46,
       "name": "Gaylord Pfeffer",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/zforrester/128.jpg",
@@ -293,12 +245,6 @@
       "name": "Mrs. Cassie Langosh",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/franciscoamk/128.jpg",
       "email": "Theodora_Leannon@gmail.com"
-    },
-    {
-      "id": 49,
-      "name": "Jade Sipes",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/zaki3d/128.jpg",
-      "email": "Derrick_Upton@hotmail.com"
     },
     {
       "id": 50,

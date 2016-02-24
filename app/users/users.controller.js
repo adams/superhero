@@ -1,23 +1,23 @@
 angular.module('app')
-    .controller('UserController', function($scope, $http){
+    .controller('UserController', function($scope, $http, $window, $log){
         $scope.user = {};
         $http({
             method: 'get',
             url: 'http://localhost:3000/users'
         })
-            .then(function(response){
+        .then(function(response){
                 if(!response.data){return;}
                 $scope.users = response.data;
             }).catch(function(response){
-            if(!response.data){return;}
-            console.log (response.status);
+                if(!response.data){return;}
+                $log.error(response.status);
         });
 
         $scope.editing = function(user){
             $scope.originalUser = angular.extend({}, user);
             $scope.editedUser = user;
-            console.log(user);
-        }
+            $log.info(user);
+        };
 
         $scope.revertEditing = function(index){
             $scope.editedUser = {};
@@ -37,10 +37,32 @@ angular.module('app')
 
                 }).catch(function(response){
                 alert("problem saving");
-                console.log (response.status);
+                $log.error(response.status);
             });
 
-        }
+        };
+
+        $scope.remove = function(index, userId){
+
+            var result = $window.confirm("Are you sure you want to delete this user.");
+            if(!result){
+                return false;
+            }
+
+            $http({
+                method: 'DELETE',
+                url: 'http://localhost:3000/users/' + userId
+            })
+            .then(function(response){
+                    $scope.users.splice(index,1);
+                    $log.info("successfully deleted");
+            }).catch(function(response){
+                alert("there was a problem deleting");
+                $log.error(response.status);
+            });
+        };
+
+
 
 
     });
