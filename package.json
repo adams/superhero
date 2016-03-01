@@ -4,7 +4,7 @@
   "description": "SuperHero App with AngularJS",
   "main": "index.js",
   "scripts": {
-    "start": "cd app && live-server"
+    "start": "serve app --port 8080"
   },
   "repository": {
     "type": "git",
