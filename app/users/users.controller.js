@@ -5,10 +5,10 @@
         .module('app')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['$http', '$window', '$log','UserService'];
+    UserController.$inject = ['$window', '$log','UserService'];
 
     /* @ngInject */
-    function UserController($http, $window, $log, UserService) {
+    function UserController($window, $log, UserService) {
         /* jshint validthis: true */
         var userCtrl = this;
         userCtrl.title = 'UserController';
@@ -20,9 +20,9 @@
 
         function activate() {
 
-            UserService.list()
-            .then(function(response){
-                userCtrl.users = response.data;
+            UserService.query().$promise
+            .then(function(data){
+                userCtrl.users = data;
             }).catch(function(response){
                 $log.error(response.status);
             });
@@ -45,7 +45,7 @@
                 return false;
             }
 
-            UserService.update(userCtrl.editedUser)
+            UserService.update(userCtrl.editedUser.id, userCtrl.editedUser).$promise
             .then(function(response){
                 userCtrl.editedUser = {};
             }).catch(function(response){
@@ -55,15 +55,15 @@
 
         };
 
-        userCtrl.remove = function(index, userId){
+        userCtrl.remove = function(index, user){
 
             var result = $window.confirm("Are you sure you want to delete this user.");
             if(!result){
                 return false;
             }
 
-            UserService.remove(userId)
-            .then(function(response){
+            UserService.remove(user).$promise
+            .then(function(data){
                 userCtrl.users.splice(index,1);
                 $log.info("successfully deleted");
             }).catch(function(response){
@@ -86,8 +86,8 @@
                 return false;
             }
 
-            UserService.add(userCtrl.newUser)
-            .then(function(response){
+            UserService.save(userCtrl.newUser).$promise
+            .then(function(data){
                 userCtrl.users.unshift(userCtrl.newUser);
                 userCtrl.newUser = null;
             }).catch(function(response){

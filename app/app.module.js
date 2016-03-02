@@ -1,4 +1,4 @@
-angular.module('app',['ngRoute']);
+angular.module('app',['ngRoute','ngResource']);
 
 angular.module('app').run(function($rootScope, $location){
 

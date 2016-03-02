@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": 7,
-      "name": "Zachery Shields",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nicolasfolliot/128.jpg",
-      "email": "Kyra_Feil@gmail.com"
-    },
-    {
-      "id": 9,
-      "name": "Miss Bulah Zieme",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/LucasPerdidao/128.jpg",
-      "email": "Lavada_Hudson@yahoo.com"
-    },
-    {
       "id": 10,
       "name": "Valentina Witting",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/horaciobella/128.jpg",
