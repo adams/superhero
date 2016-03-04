@@ -4,7 +4,8 @@
   "description": "SuperHero App with AngularJS",
   "main": "index.js",
   "scripts": {
-    "start": "serve app --port 8080"
+    "start": "cd app && live-server --ignore='db.json' && npm run start-api",
+    "start-api": "cd app && json-server db.json"
   },
   "repository": {
     "type": "git",
