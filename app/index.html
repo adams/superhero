@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="hero-app">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -10,8 +10,36 @@
 
 
 <body>
-<h1>Super Heroes</h1>
-{{2+2}}
-<script type="text/javascript" src="libs/angular.js"></script>
+
+	<div class="container" ng-controller="ListCtrl">
+		<h3>Super Heros</h3>
+		<ul class="list-inline">
+			<li>
+				<h4>Add a Super Hero:</h4>
+				<br/>
+				<label for="hero-name">Name</label>
+				<input type="text" name="hero-name" ng-model="newHero.name">
+				<label for="hero-name">Price</label>
+				<input type="text" name="hero-name" ng-model="newHero.price">
+				<label for="hero-name">Qty</label>
+				<input type="text" name="hero-name" ng-model="newHero.qty">
+				<button ng-click="addHero(newHero)">Add</button>
+			</li>
+			<br/>
+			<li>
+				<h4>Find a Super Hero:</h4>
+				<label for="hero-search"></label>
+				<input type="text" name="hero-search" ng-model="findSuperhero">
+			</li>
+		</ul>
+		
+		<ul class="list-group" ng-repeat="hero in heros | filter:findSuperhero">
+			<li class="list-group-item">{{hero.name}}</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript" src="libs/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
